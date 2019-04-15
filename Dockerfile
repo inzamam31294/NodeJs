@@ -2,10 +2,12 @@ FROM node:10.13-alpine
 
 WORKDIR /app
 
-COPY ["package.json", "package-lock.json*", "npm-shrinkwrap.json*", "./"]
+COPY ["package.json", "package-lock.json*", "./"]
 
 RUN npm install
 
+COPY . .
+
 EXPOSE 7272
 
-CMD node server.js
+CMD ["npm", "run", "serve"]

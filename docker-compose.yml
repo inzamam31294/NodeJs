@@ -4,8 +4,6 @@ services:
   nodeapps:
     image: nodeapps
     build: .
-    volumes:
-      - '.:/app'
     environment:
       NODE_ENV: production
     ports:
